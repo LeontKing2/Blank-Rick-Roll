@@ -1,3 +1,4 @@
+<style>
 html {
   display: flex;
   height:100vh;
@@ -15,7 +16,6 @@ body::before, body::after {
   color: #ff4473;
 }
 
-<style>
 head { 
   display: block;
   background-image: url(https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif);
