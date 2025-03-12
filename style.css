@@ -1,49 +1,39 @@
 html {
   display: flex;
-  height:100vh;
+  height: 100vh;
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
   background: #222;
 }
 
 body::before, body::after {
-  font-weight: bold;
-  font-family: 'SF Mono', 'Courier New', Courier, monospace;
-  font-size: 42px;
+  font: bold 42px 'SF Mono', 'Courier New', monospace;
   color: #ff4473;
 }
 
 body::before {
-  display: block;
-  background-image: url(https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif);
-  height:20rem;
-  width:20rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 5px solid #fff;
+  content: "Never gonna give you up...";
+  background: url(https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif) no-repeat center/cover;
+  height: 20rem;
+  width: 20rem;
+  border: 5px dashed #fff;
   border-radius: 10px;
-  border-style: dashed;
   display: inline-block;
   padding-top: 3rem;
-  content: "Never gonna give you up...";
 }
 
 body::after {
-  margin-left: 16px;
-  display: inline;
   content: "i";
+  margin-left: 16px;
   background: #ff4473;
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
+  50% {
     opacity: 0;
   }
 }
+/* i hope this works my friend, or else i am gonna do a simpsons move */
