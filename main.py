@@ -11,9 +11,7 @@ def hello_world():
     user_agent = request.headers.get('User-Agent', '').lower()
     
     # Check if browser is Firefox-based or Chrome/Chromium-based
-    is_firefox_based = 'firefox' in user_agent or 'gecko' in user_agent
-    is_chrome_based = 'chrome' in user_agent or 'chromium' in user_agent
-        
+    is_firefox_based = 'firefox' in user_agent
     response = Response()
     formatted_html = ""
     if is_firefox_based:
@@ -21,7 +19,7 @@ def hello_world():
         response.headers['link'] = '<style.css>; rel=stylesheet;'
     else:
         # Chrome/Others: Use HTML link element
-        formatted_html = "<link rel=\"stylesheet\" href=\"style.css\">"
+        formatted_html = "<html><head><link rel=\"stylesheet\" href=\"style.css\"></head></html>"
     
     response.data = formatted_html
     response.headers['Refresh'] = '5; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ'
